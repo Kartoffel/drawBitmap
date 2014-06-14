@@ -9,11 +9,11 @@
  * Example:
  *
 	bits=[
-	[1,0,0],
-	[1,0,0],
-	[1,1,1],
-	[1,0,1],
-	[1,1,1]
+	[1,0,0,1,0,1,0,1,1,1,0,1,0,0,1],
+	[1,1,0,1,0,1,0,1,0,0,0,1,0,1,0],
+	[1,0,1,1,0,1,0,1,1,0,0,1,1,0,0],
+	[1,0,0,1,0,1,0,1,0,0,0,1,0,1,0],
+	[1,0,0,1,0,1,0,1,1,1,0,1,0,0,1]
 	];
 	cubeSize = 4;
 	cubeSpacing = 5;
@@ -26,9 +26,9 @@ module drawBitmap(bits, cubeSpacing, cubeSize){
 	rotate(a=180, v=[1,0,0]){
 		for(i=[0:len(bits)-1]){
 			translate([0,i*cubeSpacing,0]){
-				cube(size = bits[i][0]*cubeSize, center = true);
-				translate([cubeSpacing,0,0]) cube(size = bits[i][1]*cubeSize, center = true);
-				translate([2*cubeSpacing,0,0]) cube(size = bits[i][2]*cubeSize, center = true);
+				for(x=[0:len(bits[i])-1]){
+					translate([x*cubeSpacing,0,0]) cube(size = bits[i][x]*cubeSize, center = true);
+				}
 			}
 		}
 	}
