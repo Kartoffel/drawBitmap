@@ -3,8 +3,8 @@
  * By Niek Blankers <niek@niekproductions.com>
  *
  * @param	array		bits			Bitmap array
- * @param	decimal	cubeSpacing	
- * @param	decimal	cubeSize
+ * @param	decimal		cubeSpacing	
+ * @param	array		cubeSize
  *
  * Example:
  *
@@ -15,7 +15,7 @@
 	[1,0,0,1,0,1,0,1,0,0,0,1,0,1,0],
 	[1,0,0,1,0,1,0,1,1,1,0,1,0,0,1]
 	];
-	cubeSize = 4;
+	cubeSize = [4,4,4];
 	cubeSpacing = 5;
 
 	drawBitmap(bits, cubeSpacing, cubeSize);
